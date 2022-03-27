@@ -1,0 +1,10 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using WebApp
+@using WebApp.Models
+@using WebApp.Services
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject IProfileManager ProfileManager
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

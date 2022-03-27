@@ -1,0 +1,10 @@
+﻿<nav id="main-menu">
+    <div class="menu-items">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Services">Services</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+    </div>
+    @if (!SignInManager.IsSignedIn(User)) {
+            <a asp-controller="Auth" asp-action="SignIn" class="btn btn-main">Sign In</a>
+        }
+</nav>

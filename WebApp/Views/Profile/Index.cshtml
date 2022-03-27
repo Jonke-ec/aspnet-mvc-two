@@ -1,0 +1,19 @@
+﻿@model WebApp.Models.UserProfile
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="bg-blue-gradient">
+    <div class="container">
+        <partial name="_HeaderPartial" />
+    </div>
+</div>
+
+@if (User.IsInRole("admin")) {
+    <partial name="_ProfileAdminPartial" />
+}
+else {
+    <partial name="_ProfileUserPartial" />
+}
+
+

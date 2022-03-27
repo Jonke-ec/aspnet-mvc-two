@@ -1,0 +1,18 @@
+﻿<nav id="top-menu">
+    @if (SignInManager.IsSignedIn(User)) {
+        <a asp-controller="Profile" asp-action="Index" asp-route-id="@User.FindFirst("UserId").Value">@await ProfileManager.DisplayNameAsync(User.FindFirst("UserId").Value)</a>
+        <div class="social">
+            <a asp-controller="Profile" asp-action="Index" asp-route-id="@User.FindFirst("UserId").Value">Profile</a>
+            <a asp-controller="Auth" asp-action="SignOut">Sign Out</a>
+        </div>
+    }
+    else {
+        <a href="mailto:info@domain.com">info@domain.com</a>
+        <div class="social">
+            <a href="https://facebook.com">facebook</a>
+            <a href="https://youtube.com">youtube</a>
+            <a href="https://twitter.com">twitter</a>
+            <a href="https://linkedin.com">linkedin</a>
+        </div>
+    }
+</nav>
